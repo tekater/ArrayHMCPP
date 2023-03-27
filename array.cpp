@@ -84,23 +84,29 @@ int main()
 
 	cout << "\n\nЗадание 4\n\n";
 
-	int otSum = 0; int csum = 0; int sum3 = 0;
+	
 	int arrays[10] = { -1,-2,-3,-4,-5,1,2,3,4,5 };
+	int otSum = 0;
 	min = MAXINT; int mini = 0; int one = 0; int two = 0;
-	max = 0; int maxi = 0; int sum4 = 0;
+	max = 0; int maxi = 0;
 	for (int i = 0; i < 10; i++) {
 		if (arrays[i] < 0) {
 			otSum += arrays[i];
 		}
+	}
+	cout << "\nСумма отрицательных элементов: " << otSum;
+	otSum = 0;
+	for (int i = 0; i < 10; i++) {
 		if (i % 2 == 0) {
-			csum += arrays[i];
+			otSum += arrays[i];
 
 		}
 		if (arrays[i] < 0) {
 			two = i;
 		}
 	}
-
+	cout << "\nСумма чётных номеров: " << otSum;
+	otSum = 0;
 	for (int i = 10; i >= 0; i--) {
 		if (arrays[i] < 0) {
 			one = i;
@@ -117,17 +123,21 @@ int main()
 			max = arrays[i];
 			maxi = i;
 		}
+	}
+	for (int i = 0; i < 10; i++) {
 		if (i > one && i < two) {
-			sum4 += arrays[i];
+			otSum += arrays[i];
 		}
 	}
+	cout << "\nСумма элементов отрицательных чисел: " << otSum;
+	otSum = 0;
 
 	for (int i = 0; i < 10; i++) {
 		if (i > mini && i < maxi) {
-			sum3 += arrays[i];
+			otSum += arrays[i];
 		}
 
 	}
-	cout << "\nСумма отрицательных элементов: " << otSum << "\nСумма между min-max: " << sum3 << "\nСумма чётных номеров: " << csum;
-	cout << "\nСумма элементов отрицательных чисел: " << sum4 << endl;
+	cout << "\nСумма между min-max: " << otSum;
+	
 }
